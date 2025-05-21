@@ -6,27 +6,29 @@
     <title>UNITAS Japan: The Definitive Application Guide by itokyo academy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root {
-            --primary-color: #005A9C;
-            --secondary-color: #FFB81C;
-            --accent-green: #28a745;
-            --accent-orange: #fd7e14;
-            --text-color: #343a40;
+            --primary-color: #005A9C; /* Deeper Professional Blue */
+            --secondary-color: #FFB81C; /* Vibrant Gold/Yellow */
+            --accent-green: #28a745; /* Clear Success Green */
+            --accent-orange: #fd7e14; /* Sharp Attention Orange */
+            --text-color: #212529; /* Darker, more standard text color */
             --light-text-color: #f8f9fa;
-            --bg-color: #f8f9fa;
+            --bg-color: #f9fafb; /* Slightly refined light gray */
             --card-bg: #ffffff;
-            --border-color: #dee2e6;
-            --table-header-bg: #e9ecef;
+            --border-color: #ced4da; /* Softer border color */
+            --table-header-bg: #eef2f7; /* Lighter table header */
             --neutral-light: #f1f3f5;
             --neutral-dark: #495057;
+            --shadow-xs: 0 1px 2px rgba(0,0,0,0.04);
             --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
-            --shadow-md: 0 4px 10px rgba(0,0,0,0.08);
-            --shadow-lg: 0 8px 25px rgba(0,0,0,0.1);
-            --border-radius: 10px; /* Slightly increased radius */
+            --shadow-md: 0 4px 8px rgba(0,0,0,0.07);
+            --shadow-lg: 0 10px 20px rgba(0,0,0,0.08);
+            --border-radius: 8px; /* Unified border radius */
             --itokyo-brand-emphasis: var(--secondary-color);
+            --transition-standard: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -34,159 +36,268 @@
 
         body {
             font-family: 'Open Sans', sans-serif;
-            line-height: 1.7;
+            line-height: 1.75; /* Increased for readability */
             color: var(--text-color);
             background-color: var(--bg-color);
-            font-size: 16px;
+            font-size: 16px; /* Base font size for laptop */
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden; /* Prevent horizontal scroll on body */
         }
 
         .container {
             width: 90%;
-            max-width: 1200px;
+            max-width: 1160px; /* Slightly narrower for better line lengths */
             margin: 0 auto;
-            padding: 40px 0;
+            padding: 30px 0; /* Adjusted padding */
         }
 
         h1, h2, h3, h4 {
             font-family: 'Montserrat', sans-serif;
             color: var(--primary-color);
-            margin-bottom: 20px;
+            margin-bottom: 0.75em; /* Relative margin */
             font-weight: 700;
+            line-height: 1.3;
         }
 
-        h1 { font-size: 2.8em; text-align: center; line-height: 1.2; }
+        h1 { font-size: 2.6em; text-align: center; } /* Base h1 */
         h2 {
-            font-size: 2.3em; /* Slightly larger */
-            border-bottom: 4px solid var(--secondary-color); /* Thicker border */
-            padding-bottom: 18px; /* Adjusted padding */
-            margin-top: 60px; /* Increased top margin */
+            font-size: 2.1em; /* Base h2 */
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 0.6em;
+            margin-top: 2.5em;
             position: relative;
+            font-weight: 700;
         }
-         h2::before { /* Subtle top line for section titles */
+         h2::before {
             content: '';
             position: absolute;
-            top: -15px;
+            top: -12px; /* Adjusted */
             left: 0;
-            width: 80px;
-            height: 4px;
+            width: 70px;
+            height: 3px;
             background-color: var(--primary-color);
             border-radius: 2px;
         }
 
-        h3 { font-size: 1.7em; color: var(--primary-color); margin-top: 35px; font-weight: 600;}
-        h4 { font-size: 1.25em; color: var(--neutral-dark); margin-top: 28px; margin-bottom: 12px; font-weight: 600;}
+        h3 { font-size: 1.6em; color: var(--primary-color); margin-top: 1.8em; font-weight: 600;}
+        h4 { font-size: 1.2em; color: var(--neutral-dark); margin-top: 1.5em; margin-bottom: 0.5em; font-weight: 600;}
 
-        p { margin-bottom: 18px; font-size: 1.05em; } /* Slightly larger base p */
-        a { color: var(--primary-color); text-decoration: none; font-weight: 600; }
+        p { margin-bottom: 1.2em; font-size: 1em; }
+        a { color: var(--primary-color); text-decoration: none; font-weight: 600; transition: color 0.2s ease; }
         a:hover { color: var(--secondary-color); text-decoration: underline; }
-        ul, ol { margin-bottom: 22px; padding-left: 28px; }
-        li { margin-bottom: 12px; }
-
-        strong.itokyo-academy {
-            color: var(--primary-color);
-            font-weight: 700;
-        }
-        .itokyo-brand-text { /* For general itokyo mentions if needed */
-            color: var(--primary-color);
-            font-weight: 600;
+        a:focus-visible { /* For keyboard navigation */
+            outline: 2px solid var(--secondary-color);
+            outline-offset: 2px;
+            border-radius: 2px; /* Optional: match link rounding if any */
+            text-decoration: underline; /* Ensure underline on focus if also on hover */
         }
 
+        ul, ol { margin-bottom: 1.2em; padding-left: 25px; }
+        li { margin-bottom: 0.6em; }
 
-        /* --- Navigation --- */
+        strong.itokyo-academy { color: var(--primary-color); font-weight: 700; }
+        .itokyo-brand-text { color: var(--primary-color); font-weight: 600; }
+
+
+        /* --- Navigation (Air Bar Style) --- */
         nav {
-            background-color: var(--card-bg);
-            padding: 18px 0; /* Increased padding */
-            box-shadow: var(--shadow-md);
+            background-color: rgba(255, 255, 255, 0.85); /* Lighter, slightly transparent white */
+            backdrop-filter: blur(10px); /* Frosted glass effect */
+            -webkit-backdrop-filter: blur(10px); /* For Safari */
+            padding: 15px 0;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08); /* Softer, more diffused shadow */
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 4px solid var(--primary-color); /* Thicker border */
+            border-bottom: 1px solid var(--border-color); /* Optional: very subtle border */
+            width: 100%;
+            transition: var(--transition-standard);
         }
-        nav .nav-container { display: flex; justify-content: space-between; align-items: center; width: 90%; max-width: 1200px; margin: 0 auto; }
-        nav .logo { font-family: 'Montserrat', sans-serif; font-size: 1.5em; color: var(--primary-color); font-weight: 800; }
-        nav .logo .academy-name { color: var(--secondary-color); font-weight: 700; }
-        nav ul { list-style: none; display: flex; margin: 0; padding: 0; }
-        nav ul li { margin: 0 0 0 28px; } /* Increased spacing */
+        nav.scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 12px 0;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+        nav .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            max-width: 1160px;
+            margin: 0 auto;
+        }
+        nav .logo { 
+            font-family: 'Montserrat', sans-serif; 
+            font-size: 1.3em; 
+            color: var(--primary-color); 
+            font-weight: 800; 
+            white-space: nowrap;
+            transition: var(--transition-standard);
+        }
+        nav.scrolled .logo {
+            font-size: 1.2em;
+        }
+        nav .logo .academy-name { 
+            color: var(--secondary-color); 
+            font-weight: 700; 
+            font-size: 0.8em; 
+            display: block; 
+            line-height: 1.1;
+            transition: var(--transition-standard);
+        }
+        nav.scrolled .logo .academy-name {
+            font-size: 0.75em;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            gap: 0 15px; /* Spacing between nav items */
+        }
+        nav ul li { margin: 0; } /* Margin handled by gap */
         nav ul li a {
             color: var(--primary-color);
             font-weight: 600;
-            font-size: 1em; /* Slightly larger */
-            padding: 8px 0; /* Increased padding */
-            border-bottom: 3px solid transparent; /* Thicker inactive border */
-            transition: color 0.3s ease, border-bottom-color 0.3s ease;
+            font-size: 0.95em;
+            padding: 8px 10px;
+            border-radius: 6px;
+            position: relative;
+            transition: var(--transition-standard);
+            white-space: nowrap;
         }
-        nav ul li a:hover, nav ul li a.active { color: var(--secondary-color); border-bottom-color: var(--secondary-color); text-decoration: none; }
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background-color: var(--secondary-color);
+            transition: var(--transition-standard);
+            transform: translateX(-50%);
+        }
+        nav ul li a:hover::after, nav ul li a.active::after {
+            width: 70%;
+        }
+        nav ul li a:hover, nav ul li a.active {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        nav ul li a.active {
+            font-weight: 700;
+        }
+        
+        /* Mobile menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            font-size: 1.5em;
+            cursor: pointer;
+            padding: 5px;
+            transition: var(--transition-standard);
+        }
+        .mobile-menu-btn:hover {
+            color: var(--secondary-color);
+        }
 
 
         /* --- Hero Header --- */
         .hero-header {
-            background: linear-gradient(rgba(0, 90, 156, 0.92), rgba(0, 90, 156, 0.92)), url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGphcGFuJTIwc3R1ZHl8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=1200&q=70') no-repeat center center/cover; /* New, more professional image */
+            background: linear-gradient(rgba(0, 70, 130, 0.85), rgba(0, 40, 90, 0.92)), url('https://images.pexels.com/photos/301926/pexels-photo-301926.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center/cover;
             color: var(--light-text-color);
-            padding: 90px 20px 110px 20px;
+            padding: 70px 20px 90px 20px;
             text-align: center;
-            clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%); /* Adjusted angle */
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%); /* More corporate angled bottom */
         }
         .hero-header h1 {
             color: var(--light-text-color);
-            font-size: 4em;
-            margin-bottom: 12px;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            font-size: clamp(2.2em, 5vw + 1em, 3.2em); /* Fluid font size */
+            margin-bottom: 0.3em;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
             font-weight: 800;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s forwards 0.2s;
         }
         .hero-header .subtitle {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.6em;
+            font-size: clamp(1.1em, 3vw + 0.5em, 1.4em); /* Fluid font size */
             color: var(--secondary-color);
-            margin-bottom: 28px;
-            font-weight: 700;
-            text-transform: uppercase; /* More corporate feel */
-            letter-spacing: 1px;
+            margin-bottom: 1em;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s forwards 0.4s;
         }
-        .hero-header .subtitle strong { color: #fff; }
+        .hero-header .subtitle strong { color: #fff; font-weight: 700; }
         .hero-header p.tagline {
-            font-size: 1.35em;
-            color: var(--border-color);
-            max-width: 800px;
-            margin: 0 auto 35px auto;
+            font-size: 1.15em;
+            color: #e0e0e0;
+            max-width: 750px;
+            margin: 0 auto 1.5em auto;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s forwards 0.6s;
         }
         .hero-cta {
             display: inline-block;
             background-color: var(--secondary-color);
             color: var(--primary-color);
-            padding: 16px 40px;
+            padding: 12px 30px;
             border-radius: 50px;
-            font-size: 1.25em;
+            font-size: 1.1em;
+            font-family: 'Montserrat', sans-serif;
             font-weight: 700;
             text-decoration: none;
-            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+            transition: var(--transition-standard);
+            box-shadow: var(--shadow-md);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s forwards 0.8s;
         }
         .hero-cta:hover {
             background-color: #FFC745;
             color: var(--primary-color);
             text-decoration: none;
-            transform: translateY(-4px); /* More pronounced hover */
-            box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* --- Section Styling --- */
         section {
-            padding: 55px 30px; /* Increased padding */
+            padding: 40px 25px;
             background-color: var(--card-bg);
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow-lg);
+            transition: var(--transition-standard);
+            transform: translateY(20px);
+            opacity: 0;
+        }
+        section.visible {
+            transform: translateY(0);
+            opacity: 1;
         }
         section:last-of-type { margin-bottom: 0; }
 
         /* --- Welcome Section --- */
         .welcome-section p {
-            font-size: 1.2em;
+            font-size: 1.1em;
             text-align: center;
-            max-width: 900px;
+            max-width: 850px;
             margin-left: auto;
             margin-right: auto;
             color: var(--neutral-dark);
@@ -194,199 +305,533 @@
         .welcome-section .itokyo-intro {
             font-weight: 600;
             color: var(--primary-color);
-            display: block; /* Makes it more of a statement */
-            margin-top: 10px;
+            display: block;
+            margin-top: 0.8em;
         }
 
-
         /* --- Cost Table --- */
-        .cost-table-container { overflow-x: auto; }
-        table { width: 100%; border-collapse: collapse; margin-bottom: 28px; font-size: 1em; } /* Slightly larger font */
-        th, td { border: 1px solid var(--border-color); padding: 15px 18px; text-align: left; vertical-align: middle; }
-        th { background-color: var(--table-header-bg); font-weight: 700; font-family: 'Montserrat', sans-serif; color: var(--primary-color); }
+        .cost-table-container { 
+            overflow-x: auto; 
+            margin: 0 -15px; 
+            padding: 0 15px; 
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary-color) var(--neutral-light);
+        }
+        .cost-table-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        .cost-table-container::-webkit-scrollbar-track {
+            background: var(--neutral-light);
+            border-radius: 4px;
+        }
+        .cost-table-container::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 4px;
+        }
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin-bottom: 1.5em; 
+            font-size: 0.95em; 
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+        th, td { border: 1px solid var(--border-color); padding: 12px 15px; text-align: left; vertical-align: middle; }
+        th { 
+            background-color: var(--table-header-bg); 
+            font-weight: 700; 
+            font-family: 'Montserrat', sans-serif; 
+            color: var(--primary-color);
+            position: sticky;
+            top: 0;
+        }
         td:nth-child(2), td:nth-child(3) { text-align: right; }
         .sub-total-b { background-color: var(--neutral-light); font-weight: 600; }
-        .table-section-header td { background-color: var(--secondary-color) !important; color: var(--primary-color); font-weight: 700; font-family: 'Montserrat', sans-serif; font-size: 1.15em; text-align: center !important; }
-        .total-expense-row td { background-color: var(--accent-green) !important; color: var(--light-text-color); font-weight: 700; font-family: 'Montserrat', sans-serif; font-size: 1.15em; }
-        .total-income-row td { background-color: #FFF3E0; font-weight: 700; font-family: 'Montserrat', sans-serif; font-size: 1.15em; color: var(--accent-orange); }
-        .table-note { font-size: 0.95em; font-style: italic; text-align: center; margin-top: 18px; color: var(--neutral-dark); }
+        .table-section-header td { 
+            background-color: var(--secondary-color) !important; 
+            color: var(--primary-color); 
+            font-weight: 700; 
+            font-family: 'Montserrat', sans-serif; 
+            font-size: 1.1em; 
+            text-align: center !important; 
+            padding: 15px;
+        }
+        .total-expense-row td { 
+            background-color: var(--accent-green) !important; 
+            color: var(--light-text-color); 
+            font-weight: 700; 
+            font-family: 'Montserrat', sans-serif; 
+            font-size: 1.1em; 
+            padding: 15px;
+        }
+        .total-income-row td { 
+            background-color: #FFF3E0; 
+            font-weight: 700; 
+            font-family: 'Montserrat', sans-serif; 
+            font-size: 1.1em; 
+            color: var(--accent-orange);
+            padding: 15px;
+        }
+        .table-note { 
+            font-size: 0.9em; 
+            font-style: italic; 
+            text-align: center; 
+            margin-top: 1em; 
+            color: var(--neutral-dark); 
+            background-color: var(--neutral-light);
+            padding: 12px;
+            border-radius: var(--border-radius);
+        }
         .table-note strong.itokyo-academy { font-style: normal; }
 
 
         /* --- Procedure & Checklist common --- */
         .callout-box {
-            background-color: #e9f5ff; /* Lighter blue */
-            padding: 22px 28px;
-            border-left: 7px solid var(--primary-color); /* Thicker border */
-            border-radius: 0 var(--border-radius) var(--border-radius) 0;
-            margin: 28px 0;
-            box-shadow: var(--shadow-sm);
+            background-color: #e9f5ff;
+            padding: 18px 22px;
+            border-left: 5px solid var(--primary-color);
+            border-radius: var(--border-radius);
+            margin: 1.8em 0;
+            box-shadow: var(--shadow-xs);
+            transition: var(--transition-standard);
         }
-        .callout-box p { margin-bottom: 10px; font-size: 1.08em;}
+        .callout-box:hover {
+            box-shadow: var(--shadow-sm);
+            transform: translateY(-2px);
+        }
+        .callout-box p { margin-bottom: 0.6em; font-size: 1em;}
         .callout-box strong { color: var(--primary-color); }
-        .callout-box.warning { background-color: #fff8e1; border-left-color: var(--secondary-color); } /* Lighter yellow */
-        .callout-box.warning strong { color: #795548; } /* Brownish for warning strong */
+        .callout-box.warning { background-color: #fff8e1; border-left-color: var(--secondary-color); }
+        .callout-box.warning strong { color: #795548; }
 
         .highlight {
             background-color: var(--secondary-color);
             color: var(--primary-color);
-            padding: 5px 10px; /* Increased padding */
-            border-radius: 5px; /* Slightly more rounded */
+            padding: 3px 7px;
+            border-radius: 4px;
             font-weight: 700;
+            display: inline-block;
+            line-height: 1.4;
         }
 
         /* --- Procedure Section --- */
         .procedure-list { list-style: none; padding-left: 0; counter-reset: procedure-step; }
         .procedure-list > li {
             background-color: var(--card-bg);
-            padding: 28px 28px 28px 80px;
-            border: 1px solid var(--border-color);
-            margin-bottom: 22px;
+            padding: 22px 22px 22px 70px;
+            border: 1px solid #e0e0e0;
+            margin-bottom: 1.5em;
             border-radius: var(--border-radius);
             position: relative;
-            transition: box-shadow 0.3s ease, transform 0.2s ease;
+            transition: var(--transition-standard);
             box-shadow: var(--shadow-sm);
         }
-        .procedure-list > li:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); } /* Enhanced hover */
+        .procedure-list > li:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
         .procedure-list > li::before {
             counter-increment: procedure-step;
             content: counter(procedure-step);
             position: absolute;
-            left: 22px;
+            left: 18px;
             top: 50%;
             transform: translateY(-50%);
-            background: linear-gradient(135deg, var(--primary-color), #007bff); /* Gradient for counter */
+            background: linear-gradient(135deg, var(--primary-color), #0072c6);
             color: var(--light-text-color);
-            width: 50px;
-            height: 50px;
+            width: 42px;
+            height: 42px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            font-size: 1.5em;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+            font-size: 1.3em;
+            box-shadow: var(--shadow-xs);
+            transition: var(--transition-standard);
         }
-        .procedure-list strong.step-title { display: block; font-size: 1.35em; color: var(--primary-color); margin-bottom: 14px; font-family: 'Montserrat', sans-serif; }
-        .procedure-list ul { margin-top: 12px; padding-left: 22px; list-style-type: disc; }
-        .procedure-list ul li { background-color: transparent; padding: 6px 0; border-left: none; margin-bottom: 6px; font-size: 1em; }
-        .procedure-list .icon, .section-title-icon { margin-right: 14px; color: var(--secondary-color); font-size: 1.3em; /* For section title icons */ }
-        .sponsor-requirements { background-color: #fffaf0; border: 1px solid var(--secondary-color); padding: 22px; border-radius: var(--border-radius); margin-top: 18px; }
-        .sponsor-requirements h4 { margin-top: 0; color: var(--primary-color);}
+        .procedure-list > li:hover::before {
+            transform: translateY(-50%) scale(1.05);
+            box-shadow: var(--shadow-sm);
+        }
+        .procedure-list strong.step-title { display: block; font-size: 1.25em; color: var(--primary-color); margin-bottom: 0.6em; font-family: 'Montserrat', sans-serif; font-weight: 600; }
+        .procedure-list ul { margin-top: 0.8em; padding-left: 20px; list-style-type: disc; }
+        .procedure-list ul li { background-color: transparent; padding: 4px 0; border-left: none; margin-bottom: 4px; font-size: 0.95em; }
+        .procedure-list .icon, .section-title-icon { margin-right: 10px; color: var(--secondary-color); font-size: 1.1em; }
+        .sponsor-requirements { 
+            background-color: #fffaf2; 
+            border: 1px solid var(--secondary-color); 
+            padding: 18px; 
+            border-radius: var(--border-radius); 
+            margin-top: 1em;
+            transition: var(--transition-standard);
+        }
+        .sponsor-requirements:hover {
+            box-shadow: var(--shadow-sm);
+            transform: translateY(-2px);
+        }
+        .sponsor-requirements h4 { margin-top: 0; color: var(--primary-color); font-size: 1.1em;}
 
 
         /* --- Checklist Section (Accordion) --- */
-        .checklist-intro p { font-size: 1.15em; margin-bottom: 12px; }
+        .checklist-intro p { font-size: 1.05em; margin-bottom: 0.8em; }
         .accordion-item {
             background-color: var(--card-bg);
-            margin-bottom: 14px;
+            margin-bottom: 10px;
             border: 1px solid var(--border-color);
             border-radius: var(--border-radius);
-            overflow: hidden;
+            overflow: hidden; /* Keep for max-height transition */
+            box-shadow: var(--shadow-xs);
+            transition: var(--transition-standard);
+        }
+        .accordion-item:hover {
             box-shadow: var(--shadow-sm);
         }
         .accordion-header {
             background-color: var(--neutral-light);
-            padding: 20px 25px; /* Increased padding */
+            padding: 15px 20px;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid transparent;
-            transition: background-color 0.3s ease;
+            border-bottom: 1px solid transparent; /* Initial state */
+            transition: var(--transition-standard);
         }
-        .accordion-header:hover { background-color: #dde2e7; }
-        .accordion-header h4 { margin: 0; font-size: 1.25em; color: var(--primary-color); font-weight: 600; font-family: 'Open Sans', sans-serif; }
-        .accordion-header .icon { color: var(--primary-color); margin-right: 14px; font-size: 1.15em; }
-        .accordion-header .toggle-icon { font-size: 1.35em; color: var(--primary-color); transition: transform 0.3s ease; }
-        .accordion-item.active .accordion-header { background-color: var(--primary-color); border-bottom-color: var(--border-color); }
-        .accordion-item.active .accordion-header h4,
-        .accordion-item.active .accordion-header .icon,
-        .accordion-item.active .accordion-header .toggle-icon { color: var(--light-text-color); }
-        .accordion-item.active .toggle-icon { transform: rotate(180deg); }
-        .accordion-content { padding: 0 25px; max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out, padding 0.4s ease-out; background-color: #fefefe; } /* Slightly off-white */
-        .accordion-content-inner { padding: 28px 0; }
-        .accordion-content ul { list-style-type: '✓ '; /* Custom bullet */ padding-left: 20px; margin-top: 12px; }
-        .accordion-content ul li { font-size: 1em; margin-bottom: 10px; padding-left: 8px; }
-        .checklist-note {
-            background: linear-gradient(45deg, var(--accent-orange), var(--secondary-color));
-            color: var(--light-text-color);
-            padding: 22px 28px;
-            text-align: center;
-            border-radius: var(--border-radius);
-            font-size: 1.2em;
-            font-weight: 700;
-            margin-top: 38px;
+        .accordion-header:hover { background-color: #e2e6ea; }
+        .accordion-header:focus-visible { /* Accessibility */
+            outline: 2px solid var(--primary-color);
+            outline-offset: -2px; /* Adjust to be inside or outside */
+        }
+        .accordion-header h4 { 
+            margin: 0; 
+            font-size: 1.15em; 
+            color: var(--primary-color); 
+            font-weight: 600; 
+            font-family: 'Open Sans', sans-serif;
+            transition: var(--transition-standard);
+        }
+        .accordion-header .icon { 
+            color: var(--primary-color); 
+            margin-right: 12px; 
+            font-size: 1.05em;
+            transition: var(--transition-standard);
+        }
+        .accordion-header .toggle-icon { 
+            font-size: 1.2em; 
+            color: var(--primary-color); 
+            transition: var(--transition-standard);
+        }
+
+        .accordion-item.active {
             box-shadow: var(--shadow-md);
         }
-        .checklist-note .fa-bullhorn { margin-right: 12px; animation: pulse 1.5s infinite; }
+        .accordion-item.active .accordion-header {
+            background-color: var(--primary-color);
+        }
+        .accordion-item.active .accordion-header h4,
+        .accordion-item.active .accordion-header .icon,
+        .accordion-item.active .accordion-header .toggle-icon {
+            color: var(--light-text-color);
+        }
+        .accordion-item.active .toggle-icon { transform: rotate(180deg); }
 
-        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+        .accordion-content {
+            padding: 0 20px; /* Horizontal padding applied here */
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), padding-top 0.35s cubic-bezier(0.4, 0, 0.2, 1), padding-bottom 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            background-color: #fdfdfd; /* Slight off-white for content area */
+        }
+        
+        .accordion-content-inner {
+            padding: 20px 0; /* Vertical padding for content inside */
+        }
+        .accordion-content ul { list-style-type: '– '; padding-left: 15px; margin-top: 0.8em; }
+        .accordion-content ul li { font-size: 0.95em; margin-bottom: 0.5em; padding-left: 5px; }
+
+        .checklist-note {
+            background: linear-gradient(135deg, var(--accent-orange), var(--secondary-color));
+            color: var(--light-text-color);
+            padding: 18px 22px;
+            text-align: center;
+            border-radius: var(--border-radius);
+            font-size: 1.1em;
+            font-weight: 700;
+            margin-top: 2em;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-standard);
+        }
+        .checklist-note:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+        .checklist-note .fa-bullhorn { 
+            margin-right: 10px; 
+            animation: pulse 1.8s infinite ease-in-out; 
+        }
+
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.08); } }
 
         /* --- FAQ Section --- */
-        #faq .accordion-header h4 { font-size: 1.15em; } /* Slightly smaller for FAQ questions */
-        #faq .accordion-content p { font-size: 1em; }
+        #faq .accordion-header h4 { font-size: 1.1em; }
+        #faq .accordion-content p { font-size: 0.95em; }
 
 
         /* --- Footer --- */
         footer {
             text-align: center;
-            padding: 45px 0;
-            margin-top: 55px;
+            padding: 35px 0;
+            margin-top: 3em;
             background-color: var(--neutral-dark);
-            color: #ccc;
-            font-size: 1em;
+            color: #b0bec5;
+            font-size: 0.9em;
+            position: relative;
+            overflow: hidden;
         }
-        footer p { margin-bottom: 10px; }
-        footer a { color: var(--secondary-color); font-weight: 700;}
-        footer a:hover { color: var(--light-text-color); }
-        .footer-brand { font-family: 'Montserrat', sans-serif; font-weight: 700; color: var(--light-text-color); }
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--primary-color));
+            z-index: 1;
+        }
+        footer p { margin-bottom: 0.6em; }
+        footer a { color: var(--secondary-color); font-weight: 600; transition: var(--transition-standard); }
+        footer a:hover { color: var(--light-text-color); text-decoration: none; }
+        .footer-brand { font-family: 'Montserrat', sans-serif; font-weight: 600; color: var(--light-text-color); }
         .footer-brand .academy { color: var(--secondary-color); }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary-color);
+            color: var(--light-text-color);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            box-shadow: var(--shadow-md);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: var(--transition-standard);
+            cursor: pointer;
+            z-index: 99;
+        }
+        .back-to-top.visible {
+            opacity: 0.9;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .back-to-top:hover {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            opacity: 1;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
 
 
         /* --- Responsive Adjustments --- */
+
+        /* Tablet & Smaller Laptops (<= 992px) */
         @media (max-width: 992px) {
-            nav .nav-container { flex-direction: column; align-items: center; }
-            nav .logo { margin-bottom: 15px; text-align: center; }
-            nav ul { justify-content: center; flex-wrap: wrap; }
-            nav ul li { margin: 5px 12px; } /* Adjusted */
-            .hero-header h1 { font-size: 3.2em; } /* Adjusted */
-            .hero-header .subtitle { font-size: 1.4em; } /* Adjusted */
-            h2 { font-size: 2em; }
-        }
-
-        @media (max-width: 768px) {
             body { font-size: 15px; }
-            .container { width: 95%; padding: 25px 0; }
-            .hero-header { padding: 70px 15px 90px 15px; clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);} /* Adjusted */
-            .hero-header h1 { font-size: 2.6em; }
-            .hero-header .subtitle { font-size: 1.25em; }
-            .hero-header p.tagline { font-size: 1.15em; }
-            h2 { font-size: 1.9em; margin-top: 45px; }
-            h2::before { width: 60px; top: -12px; }
-            h3 { font-size: 1.5em; }
-            section { padding: 40px 20px; }
-            th, td { padding: 12px 10px; font-size: 0.95em;}
-            .procedure-list > li { padding: 22px 20px 22px 70px; }
-            .procedure-list > li::before { width: 42px; height: 42px; font-size: 1.3em; left: 18px; }
-            .accordion-header h4 { font-size: 1.1em; }
-            p { font-size: 1em; }
-        }
-        @media (max-width: 480px) {
-            .hero-header { clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);}
-            .hero-header h1 { font-size: 2.2em; }
-            .hero-header .subtitle { font-size: 1.1em; }
+            .container { width: 92%; padding: 25px 0; }
+
+            /* Nav adjustments for "Air Bar" */
+            nav .nav-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav .logo { margin-bottom: 12px; text-align: center; }
+            nav ul {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 8px 12px; /* Use gap for wrapped items */
+            }
+            nav ul li { margin: 0; } /* Let gap handle spacing */
+            nav ul li a { font-size: 0.9em; padding: 6px 8px; }
+
+            .hero-header h1 { font-size: 2.8em; } /* clamp handles this, but can fine-tune if needed */
+            .hero-header .subtitle { font-size: 1.25em; } /* clamp handles this */
             .hero-header p.tagline { font-size: 1.05em; }
-            h1 { font-size: 2em; }
-            h2 { font-size: 1.6em; }
-            h2::before { width: 50px; }
-            .procedure-list > li { padding: 20px 15px 20px 60px; }
-            .procedure-list > li::before { width: 35px; height: 35px; font-size: 1.1em; left: 15px;}
-            .accordion-header { padding: 15px 18px; }
-            .accordion-header h4 { font-size: 1.05em; }
+            h1 { font-size: 2.3em; }
+            h2 { font-size: 1.9em; }
+            h2::before { width: 60px; top: -10px; }
+            section { padding: 30px 20px; }
+            .procedure-list > li { padding: 20px 20px 20px 65px; }
+            .procedure-list > li::before { width: 38px; height: 38px; font-size: 1.2em; left: 15px; }
         }
 
+        /* Mobile Devices (<= 768px) */
+        @media (max-width: 768px) {
+            body { font-size: 14px; }
+            .container { width: 95%; }
+            .hero-header { padding: 50px 15px 70px 15px; clip-path: polygon(0 0, 100% 0, 100% 92%, 50% 100%, 0 92%);}
+            .hero-header p.tagline { font-size: 1em; max-width: 90%; }
+            .hero-cta { font-size: 1em; padding: 10px 25px; }
+            h1 { font-size: 2em; }
+            h2 { font-size: 1.7em; margin-top: 2em; padding-bottom: 0.5em; }
+            h2::before { width: 50px; top: -8px; height: 2px;}
+            h3 { font-size: 1.4em; }
+            h4 { font-size: 1.1em; }
+            p { font-size: 0.95em; }
+            section { padding: 25px 15px; margin-bottom: 25px; }
+            th, td { padding: 10px 8px; font-size: 0.9em;}
+            .procedure-list > li { padding: 18px 15px 18px 60px; }
+            .procedure-list > li::before { width: 35px; height: 35px; font-size: 1.1em; left: 12px; }
+            .accordion-header h4 { font-size: 1.05em; }
+            .accordion-content ul li { font-size: 0.9em; }
+            .checklist-note { font-size: 1em; padding: 15px 18px; }
+            footer { padding: 25px 0; font-size: 0.85em; }
+            
+            /* Mobile menu */
+            .mobile-menu-btn {
+                display: block;
+            }
+            nav .nav-container {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            nav .logo {
+                margin-bottom: 0;
+                text-align: left;
+            }
+            nav ul {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: rgba(255, 255, 255, 0.98);
+                flex-direction: column;
+                align-items: center;
+                padding: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.35s ease-out, padding 0.35s ease-out;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                z-index: 1001;
+            }
+            nav ul.mobile-visible {
+                max-height: 300px;
+                padding: 15px 0;
+                overflow-y: auto;
+            }
+            nav ul li {
+                width: 100%;
+                text-align: center;
+            }
+            nav ul li a {
+                display: block;
+                padding: 12px 15px;
+                width: 100%;
+            }
+            nav ul li a::after {
+                display: none;
+            }
+            .back-to-top {
+                bottom: 15px;
+                right: 15px;
+                width: 40px;
+                height: 40px;
+                font-size: 1.1em;
+            }
+        }
+
+        /* Smaller Mobile Devices (<= 480px) */
+        @media (max-width: 480px) {
+            nav .logo { font-size: 1.1em; }
+            nav .logo .academy-name { font-size: 0.75em; }
+
+            .hero-header { clip-path: polygon(0 0, 100% 0, 100% 94%, 50% 100%, 0 94%); padding: 40px 10px 60px 10px;}
+            .hero-header p.tagline { font-size: 0.9em; }
+
+            h1 { font-size: 1.8em; }
+            h2 { font-size: 1.5em; }
+            h3 { font-size: 1.3em; }
+            .procedure-list > li { padding: 15px 12px 15px 50px; }
+            .procedure-list > li::before { width: 30px; height: 30px; font-size: 1em; left: 10px;}
+            .accordion-header { padding: 12px 15px; }
+            .accordion-header h4 { font-size: 1em; }
+            .callout-box { padding: 15px 18px; }
+            .callout-box p { font-size: 0.95em; }
+            .table-note { font-size: 0.85em; }
+            .back-to-top {
+                width: 35px;
+                height: 35px;
+                font-size: 1em;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            nav, .back-to-top, .hero-cta {
+                display: none !important;
+            }
+            body {
+                font-size: 12pt;
+                color: #000;
+                background: #fff;
+            }
+            h1, h2, h3, h4, .accordion-header h4 {
+                color: #000;
+            }
+            a {
+                color: #000;
+                text-decoration: underline;
+            }
+            .hero-header {
+                background: #f0f0f0 !important;
+                color: #000 !important;
+                clip-path: none;
+                padding: 20px;
+            }
+            .hero-header h1, .hero-header .subtitle {
+                color: #000 !important;
+                text-shadow: none;
+            }
+            .container {
+                width: 100%;
+                padding: 0;
+            }
+            section {
+                page-break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #ddd;
+                margin-bottom: 20px;
+                break-inside: avoid;
+            }
+            .accordion-item {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            .accordion-content {
+                max-height: none !important;
+                display: block !important;
+            }
+            footer {
+                background: #f0f0f0 !important;
+                color: #000 !important;
+                border-top: 1px solid #ddd;
+            }
+            .procedure-list > li::before {
+                background: #f0f0f0 !important;
+                color: #000 !important;
+                border: 1px solid #000;
+            }
+            .table-section-header td, .total-expense-row td, .total-income-row td {
+                background: #f0f0f0 !important;
+                color: #000 !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -394,7 +839,10 @@
     <nav id="main-nav">
         <div class="nav-container">
             <div class="logo">UNITAS JAPAN GUIDE <span class="academy-name">by itokyo academy</span></div>
-            <ul>
+            <button type="button" class="mobile-menu-btn" aria-label="Toggle navigation" aria-expanded="false">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+            <ul id="nav-menu">
                 <li><a href="#welcome" class="active">Welcome</a></li>
                 <li><a href="#costs">Costs</a></li>
                 <li><a href="#procedure">Procedure</a></li>
@@ -408,18 +856,18 @@
         <h1>UNITAS Japanese Language School</h1>
         <h2 class="subtitle">The Definitive Application Masterclass by <strong class="itokyo-academy">itokyo academy</strong></h2>
         <p class="tagline">Unlock Your Future in Japan. This is more than a guide; it's your comprehensive roadmap to success, meticulously crafted by the experts at <strong class="itokyo-academy">itokyo academy</strong>. Every step, every document, every question – answered.</p>
-        <a href="#procedure" class="hero-cta">Begin Your Journey <i class="fas fa-rocket"></i></a>
+        <a href="#procedure" class="hero-cta">Begin Your Journey <i class="fas fa-rocket" aria-hidden="true"></i></a>
     </header>
 
     <div class="container">
         <section id="welcome" class="welcome-section">
-            <h2><i class="fas fa-door-open section-title-icon"></i>Welcome to Your UNITAS Application HQ</h2>
+            <h2><i class="fas fa-door-open section-title-icon" aria-hidden="true"></i>Welcome to Your UNITAS Application HQ</h2>
             <p>Embarking on your studies at UNITAS Japanese Language School signifies a monumental step towards linguistic mastery and profound cultural immersion. This is not just another application guide; it's a <span class="highlight">game-changing resource</span>, expertly engineered by <strong class="itokyo-academy">itokyo academy</strong> to demystify every facet of the UNITAS application. We understand the aspirations and anxieties involved. That's why <strong class="itokyo-academy">itokyo academy</strong> has poured its extensive experience into creating this definitive, corporate-profile standard document. Our mission is to empower you with clarity, confidence, and a clear path to making your dream of studying in Japan an exhilarating reality.</p>
             <p class="itokyo-intro">With <strong class="itokyo-academy">itokyo academy</strong>, you're not just applying; you're preparing for success.</p>
         </section>
 
         <section id="costs">
-            <h2><i class="fas fa-file-invoice-dollar section-title-icon"></i>Comprehensive Financial Overview by <strong class="itokyo-academy">itokyo academy</strong></h2>
+            <h2><i class="fas fa-file-invoice-dollar section-title-icon" aria-hidden="true"></i>Comprehensive Financial Overview by <strong class="itokyo-academy">itokyo academy</strong></h2>
             <p>A transparent understanding of the financial commitment is paramount for successful international study. <strong class="itokyo-academy">itokyo academy</strong> provides this detailed, estimated breakdown of first-year expenses and potential part-time income for Unitas students. We believe in empowering you with all necessary data for informed planning.</p>
             <div class="cost-table-container">
                 <table>
@@ -432,7 +880,7 @@
                     </thead>
                     <tbody>
                         <tr class="table-section-header">
-                            <td colspan="3"><i class="fas fa-plane-departure icon"></i> Expenses in India (Pre-Departure, Curated by <strong class="itokyo-academy">itokyo academy</strong>)</td>
+                            <td colspan="3"><i class="fas fa-plane-departure icon" aria-hidden="true"></i> Expenses in India (Pre-Departure, Curated by <strong class="itokyo-academy">itokyo academy</strong>)</td>
                         </tr>
                         <tr>
                             <td>N5+N4 Study Material & Classes (Recommended by <strong class="itokyo-academy">itokyo academy</strong>)</td>
@@ -455,7 +903,7 @@
                             <td>150,000 INR</td>
                         </tr>
                         <tr class="table-section-header">
-                            <td colspan="3"><i class="fas fa-yen-sign icon"></i> Expenses in Japan (First Year - <strong class="itokyo-academy">itokyo academy</strong> Projection)</td>
+                            <td colspan="3"><i class="fas fa-yen-sign icon" aria-hidden="true"></i> Expenses in Japan (First Year - <strong class="itokyo-academy">itokyo academy</strong> Projection)</td>
                         </tr>
                         <tr>
                             <td>1 Year Course Fee (Single Payment)</td>
@@ -478,12 +926,12 @@
                             <td>1,272,000 INR</td>
                         </tr>
                         <tr class="total-expense-row">
-                            <td><i class="fas fa-wallet icon"></i> Total Estimated First-Year Expense (INR) [A+B]</td>
+                            <td><i class="fas fa-wallet icon" aria-hidden="true"></i> Total Estimated First-Year Expense (INR) [A+B]</td>
                             <td>1,170,000 INR</td>
                             <td>1,422,000 INR</td>
                         </tr>
                         <tr class="table-section-header">
-                            <td colspan="3"><i class="fas fa-briefcase icon"></i> Potential Part-Time Income (Student Work Permit Insights by <strong class="itokyo-academy">itokyo academy</strong>)</td>
+                            <td colspan="3"><i class="fas fa-briefcase icon" aria-hidden="true"></i> Potential Part-Time Income (Student Work Permit Insights by <strong class="itokyo-academy">itokyo academy</strong>)</td>
                         </tr>
                         <tr>
                             <td>Typical Hourly Wage (Kofu: ~950 JPY | Tokyo: ~1150 JPY)</td>
@@ -501,7 +949,7 @@
                             <td>~1,035,000 - 1,265,000 JPY</td>
                         </tr>
                         <tr class="total-income-row">
-                            <td><i class="fas fa-piggy-bank icon"></i> Total Estimated First-Year Income (INR, @0.60)</td>
+                            <td><i class="fas fa-piggy-bank icon" aria-hidden="true"></i> Total Estimated First-Year Income (INR, @0.60)</td>
                             <td>~513,000 - 627,000 INR</td>
                             <td>~621,000 - 759,000 INR</td>
                         </tr>
@@ -512,13 +960,13 @@
         </section>
 
         <section id="procedure">
-            <h2><i class="fas fa-cogs section-title-icon"></i> The <strong class="itokyo-academy">itokyo academy</strong> Streamlined UNITAS Application Protocol</h2>
+            <h2><i class="fas fa-cogs section-title-icon" aria-hidden="true"></i> The <strong class="itokyo-academy">itokyo academy</strong> Streamlined UNITAS Application Protocol</h2>
             <p>Navigate the UNITAS application with unparalleled precision and confidence by following the <strong class="itokyo-academy">itokyo academy</strong> step-by-step protocol. Our expert consultants will be your partners, ensuring every stage is handled with utmost professionalism for a seamless experience.</p>
             <ol class="procedure-list">
                 <li>
-                    <strong class="step-title"><i class="fas fa-user-shield icon"></i>Step 1: In-depth Requirement Analysis & Sponsor Validation with <strong class="itokyo-academy">itokyo academy</strong></strong>
+                    <strong class="step-title"><i class="fas fa-user-shield icon" aria-hidden="true"></i>Step 1: In-depth Requirement Analysis & Sponsor Validation with <strong class="itokyo-academy">itokyo academy</strong></strong>
                     <div class="sponsor-requirements">
-                        <h4><i class="fas fa-check-circle icon" style="color: var(--accent-green);"></i>Sponsor Eligibility Criteria (Confirmed by <strong class="itokyo-academy">itokyo academy</strong>):</h4>
+                        <h4><i class="fas fa-check-circle icon" style="color: var(--accent-green);" aria-hidden="true"></i>Sponsor Eligibility Criteria (Confirmed by <strong class="itokyo-academy">itokyo academy</strong>):</h4>
                         <ul>
                             <li>A financially sound sponsor is non-negotiable for a student visa to UNITAS Japan.</li>
                             <li>Permitted sponsors: Self, direct family members, or verifiable blood relatives.</li>
@@ -530,7 +978,7 @@
                     </div>
                 </li>
                 <li>
-                    <strong class="step-title"><i class="fas fa-file-signature icon"></i>Step 2: Initial Document Collation & Submission to <strong class="itokyo-academy">itokyo academy</strong> Central Processing</strong>
+                    <strong class="step-title"><i class="fas fa-file-signature icon" aria-hidden="true"></i>Step 2: Initial Document Collation & Submission to <strong class="itokyo-academy">itokyo academy</strong> Central Processing</strong>
                     <p>Upon successful sponsor validation, your <strong class="itokyo-academy">itokyo academy</strong> advisor will provide a personalized checklist and guide you in compiling these preliminary documents for our internal review:</p>
                     <ul>
                         <li>UNITAS CV Excel file (Latest version, provided by <strong class="itokyo-academy">itokyo academy</strong>)</li>
@@ -541,48 +989,48 @@
                         <li>Sponsor's Latest ITR Copy (with computation of income)</li>
                     </ul>
                     <div class="callout-box warning">
-                        <p><strong><i class="fas fa-exclamation-triangle icon"></i><strong class="itokyo-academy">itokyo academy</strong>'s Critical Submission Directives:</strong></p>
+                        <p><strong><i class="fas fa-exclamation-triangle icon" aria-hidden="true"></i><strong class="itokyo-academy">itokyo academy</strong>'s Critical Submission Directives:</strong></p>
                         <ul>
                             <li>Adhere strictly to using the <span class="highlight">DEDICATED EMAIL THREAD</span> established by your <strong class="itokyo-academy">itokyo academy</strong> consultant for all submissions.</li>
                             <li>Employ clear, standardized filenames as instructed by <strong class="itokyo-academy">itokyo academy</strong> (e.g., `YourFullName_Passport_YYYYMMDD.pdf`).</li>
                         </ul>
                     </div>
                     <div class="callout-box">
-                        <p><strong><i class="fas fa-envelope-open-text icon"></i>Primary Email for <strong class="itokyo-academy">itokyo academy</strong> Admissions Team:</strong> <a href="mailto:unitasadmission@itokyoacademy.com">unitasadmission@itokyoacademy.com</a></p>
-                        <p><strong><i class="fas fa-user-tie icon"></i>Mandatory CC to Your <strong class="itokyo-academy">itokyo academy</strong> Lead Consultant:</strong> <a href="mailto:kumar@itokyoacademy.com">kumar@itokyoacademy.com</a></p>
+                        <p><strong><i class="fas fa-envelope-open-text icon" aria-hidden="true"></i>Primary Email for <strong class="itokyo-academy">itokyo academy</strong> Admissions Team:</strong> <a href="mailto:unitasadmission@itokyoacademy.com">unitasadmission@itokyoacademy.com</a></p>
+                        <p><strong><i class="fas fa-user-tie icon" aria-hidden="true"></i>Mandatory CC to Your <strong class="itokyo-academy">itokyo academy</strong> Lead Consultant:</strong> <a href="mailto:kumar@itokyoacademy.com">kumar@itokyoacademy.com</a></p>
                     </div>
                 </li>
-                <li><strong class="step-title"><i class="fas fa-users-cog icon"></i>Step 3: Strategic Meeting 1 with Vinothini (<strong class="itokyo-academy">itokyo academy</strong> Client Relations)</strong> (Initial profile assessment, expectation setting, and personalized roadmap discussion)</li>
-                <li><strong class="step-title"><i class="fas fa-chalkboard-teacher icon"></i>Step 4: Strategic Meeting 2 with Kumarさん (<strong class="itokyo-academy">itokyo academy</strong> Senior Visa & Admissions Strategist)</strong> (In-depth document review, financial articulation, and interview preparation strategies)</li>
-                <li><strong class="step-title"><i class="fas fa-school icon"></i>Step 5: Official UNITAS Representative Meeting (Facilitated by <strong class="itokyo-academy">itokyo academy</strong>)</strong> (Formal interaction with UNITAS, expertly coordinated by your <strong class="itokyo-academy">itokyo academy</strong> team)</li>
-                <li><strong class="step-title"><i class="fas fa-award icon"></i>Step 6: UNITAS Admission Results (Promptly Communicated by <strong class="itokyo-academy">itokyo academy</strong>)</strong> (Receive your application outcome directly from your trusted <strong class="itokyo-academy">itokyo academy</strong> liaison)</li>
-                <li><strong class="step-title"><i class="fas fa-stamp icon"></i>Step 7: Final Document Arsenal & Visa Lodgment (Under <strong class="itokyo-academy">itokyo academy</strong>'s Expert Supervision)</strong> (If successful, meticulous compilation of all final documents for CoE and visa application, managed by <strong class="itokyo-academy">itokyo academy</strong>)</li>
+                <li><strong class="step-title"><i class="fas fa-users-cog icon" aria-hidden="true"></i>Step 3: Strategic Meeting 1 with Vinothini (<strong class="itokyo-academy">itokyo academy</strong> Client Relations)</strong> (Initial profile assessment, expectation setting, and personalized roadmap discussion)</li>
+                <li><strong class="step-title"><i class="fas fa-chalkboard-teacher icon" aria-hidden="true"></i>Step 4: Strategic Meeting 2 with Kumarさん (<strong class="itokyo-academy">itokyo academy</strong> Senior Visa & Admissions Strategist)</strong> (In-depth document review, financial articulation, and interview preparation strategies)</li>
+                <li><strong class="step-title"><i class="fas fa-school icon" aria-hidden="true"></i>Step 5: Official UNITAS Representative Meeting (Facilitated by <strong class="itokyo-academy">itokyo academy</strong>)</strong> (Formal interaction with UNITAS, expertly coordinated by your <strong class="itokyo-academy">itokyo academy</strong> team)</li>
+                <li><strong class="step-title"><i class="fas fa-award icon" aria-hidden="true"></i>Step 6: UNITAS Admission Results (Promptly Communicated by <strong class="itokyo-academy">itokyo academy</strong>)</strong> (Receive your application outcome directly from your trusted <strong class="itokyo-academy">itokyo academy</strong> liaison)</li>
+                <li><strong class="step-title"><i class="fas fa-stamp icon" aria-hidden="true"></i>Step 7: Final Document Arsenal & Visa Lodgment (Under <strong class="itokyo-academy">itokyo academy</strong>'s Expert Supervision)</strong> (If successful, meticulous compilation of all final documents for CoE and visa application, managed by <strong class="itokyo-academy">itokyo academy</strong>)</li>
             </ol>
         </section>
 
         <section id="checklist">
-            <h2><i class="fas fa-clipboard-list section-title-icon"></i>The <strong class="itokyo-academy">itokyo academy</strong> Gold-Standard Document Checklist</h2>
+            <h2><i class="fas fa-clipboard-list section-title-icon" aria-hidden="true"></i>The <strong class="itokyo-academy">itokyo academy</strong> Gold-Standard Document Checklist</h2>
             <div class="checklist-intro">
                 <p>Perfection in documentation is non-negotiable. This exhaustive checklist, developed by <strong class="itokyo-academy">itokyo academy</strong>'s seasoned experts, outlines all 16 critical document sets. Your <strong class="itokyo-academy">itokyo academy</strong> consultant will provide personalized templates and scrutinize each item for compliance before submission.</p>
             </div>
             <div class="callout-box warning">
-                 <p><strong><i class="fas fa-exclamation-circle icon"></i><strong class="itokyo-academy">itokyo academy</strong>'s Unwavering Submission Protocol:</strong></p>
+                 <p><strong><i class="fas fa-exclamation-circle icon" aria-hidden="true"></i><strong class="itokyo-academy">itokyo academy</strong>'s Unwavering Submission Protocol:</strong></p>
                  <ul>
                     <li>Maintain the integrity of the <span class="highlight">SINGLE EMAIL THREAD</span> for all document exchanges with <strong class="itokyo-academy">itokyo academy</strong>.</li>
                     <li>Adhere to <strong class="itokyo-academy">itokyo academy</strong>'s <span class="highlight">PRESCRIBED FILENAMING CONVENTIONS</span> for impeccable organization.</li>
                 </ul>
             </div>
              <div class="callout-box">
-                <p><strong><i class="fas fa-paper-plane icon"></i>Submit All Final, <strong class="itokyo-academy">itokyo academy</strong>-Verified Documents To:</strong> <a href="mailto:unitasadmission@itokyoacademy.com">unitasadmission@itokyoacademy.com</a></p>
-                <p><strong><i class="fas fa-user-check icon"></i>Ensure CC To Your <strong class="itokyo-academy">itokyo academy</strong> Primary Contact:</strong> <a href="mailto:kumar@itokyoacademy.com">kumar@itokyoacademy.com</a></p>
+                <p><strong><i class="fas fa-paper-plane icon" aria-hidden="true"></i>Submit All Final, <strong class="itokyo-academy">itokyo academy</strong>-Verified Documents To:</strong> <a href="mailto:unitasadmission@itokyoacademy.com">unitasadmission@itokyoacademy.com</a></p>
+                <p><strong><i class="fas fa-user-check icon" aria-hidden="true"></i>Ensure CC To Your <strong class="itokyo-academy">itokyo academy</strong> Primary Contact:</strong> <a href="mailto:kumar@itokyoacademy.com">kumar@itokyoacademy.com</a></p>
             </div>
 
             <div class="accordion">
                 <!-- Item 1 -->
                 <div class="accordion-item">
                     <div class="accordion-header">
-                        <h4><i class="fas fa-file-excel icon"></i>1. Application Forms (Excel – Form 1, 2, & 3: <strong class="itokyo-academy">itokyo academy</strong> Version)</h4>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
+                        <h4><i class="fas fa-file-excel icon" aria-hidden="true"></i>1. Application Forms (Excel – Form 1, 2, & 3: <strong class="itokyo-academy">itokyo academy</strong> Version)</h4>
+                        <i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
                     </div>
                     <div class="accordion-content">
                         <div class="accordion-content-inner">
@@ -594,7 +1042,7 @@
                                 <li>Course Applied for: "General Japanese Language Course" (or specific course advised by <strong class="itokyo-academy">itokyo academy</strong>).</li>
                                 <li>Accommodation Preference: "To be decided" (UNITAS or <strong class="itokyo-academy">itokyo academy</strong> can assist with options later).</li>
                                 <li>Future Plans (in form): Clearly articulate your post-study goals (e.g., "Seek employment in IT sector in Japan leveraging Japanese skills"). <strong class="itokyo-academy">itokyo academy</strong> helps refine this statement.</li>
-                                <li>Sponsor’s Full Legal Name: Must <span class="highlight">PERFECTLY MATCH</span> all financial and identification documents (ITR, Bank Records, Passport/Aadhaar).</li>
+                                <li>Sponsor's Full Legal Name: Must <span class="highlight">PERFECTLY MATCH</span> all financial and identification documents (ITR, Bank Records, Passport/Aadhaar).</li>
                                 <li>Form 2 (Detailed Education History): List all formal education from 1st Standard (Primary School) onwards. <span class="highlight">EXCLUDE Kindergarten/Nursery</span>. Ensure no gaps in timelines.</li>
                                 <li>School/College Names: Use <span class="highlight">FULL OFFICIAL NAMES</span> (e.g., "Kendriya Vidyalaya No. 1" ✅ not "KV No. 1" ❌).</li>
                                 <li>Graduation Dates: Mention exact Month & Year as per official certificates/transcripts.</li>
@@ -606,8 +1054,8 @@
                 <!-- Item 2 -->
                 <div class="accordion-item">
                     <div class="accordion-header">
-                        <h4><i class="fas fa-file-word icon"></i>2. Statement of Purpose (Reason for Study - PDF/Word)</h4>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
+                        <h4><i class="fas fa-file-word icon" aria-hidden="true"></i>2. Statement of Purpose (Reason for Study - PDF/Word)</h4>
+                        <i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
                     </div>
                     <div class="accordion-content">
                         <div class="accordion-content-inner">
@@ -618,8 +1066,8 @@
                 <!-- Item 3 -->
                 <div class="accordion-item">
                     <div class="accordion-header">
-                        <h4><i class="fas fa-file-alt icon"></i>3. Future Path & Career Goals Explanation (PDF/Word)</h4>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
+                        <h4><i class="fas fa-file-alt icon" aria-hidden="true"></i>3. Future Path & Career Goals Explanation (PDF/Word)</h4>
+                        <i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
                     </div>
                     <div class="accordion-content">
                         <div class="accordion-content-inner">
@@ -630,8 +1078,8 @@
                 <!-- Item 4: Degree Certificate -->
                 <div class="accordion-item">
                     <div class="accordion-header">
-                        <h4><i class="fas fa-graduation-cap icon"></i>4. Academic Transcripts & Degree Certificate(s)</h4>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
+                        <h4><i class="fas fa-graduation-cap icon" aria-hidden="true"></i>4. Academic Transcripts & Degree Certificate(s)</h4>
+                        <i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
                     </div>
                     <div class="accordion-content">
                         <div class="accordion-content-inner">
@@ -642,8 +1090,8 @@
                 <!-- Item 5: JLPT/NAT -->
                 <div class="accordion-item">
                     <div class="accordion-header">
-                        <h4><i class="fas fa-language icon"></i>5. JLPT/NAT/Other Japanese Proficiency Certificate</h4>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
+                        <h4><i class="fas fa-language icon" aria-hidden="true"></i>5. JLPT/NAT/Other Japanese Proficiency Certificate</h4>
+                        <i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
                     </div>
                     <div class="accordion-content">
                         <div class="accordion-content-inner">
@@ -654,8 +1102,8 @@
                 <!-- Item 6: Study Certificate -->
                 <div class="accordion-item">
                     <div class="accordion-header">
-                        <h4><i class="fas fa-chalkboard icon"></i>6. Japanese Language Study Hours Certificate (from Institute)</h4>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
+                        <h4><i class="fas fa-chalkboard icon" aria-hidden="true"></i>6. Japanese Language Study Hours Certificate (from Institute)</h4>
+                        <i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
                     </div>
                     <div class="accordion-content">
                         <div class="accordion-content-inner">
@@ -666,8 +1114,8 @@
                 <!-- Item 7: Passport -->
                 <div class="accordion-item">
                     <div class="accordion-header">
-                        <h4><i class="fas fa-passport icon"></i>7. Passport Copy (All Pages with Markings)</h4>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
+                        <h4><i class="fas fa-passport icon" aria-hidden="true"></i>7. Passport Copy (All Pages with Markings)</h4>
+                        <i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
                     </div>
                     <div class="accordion-content">
                         <div class="accordion-content-inner">
@@ -678,8 +1126,8 @@
                 <!-- Item 8: Relationship Proof -->
                 <div class="accordion-item">
                     <div class="accordion-header">
-                        <h4><i class="fas fa-users icon"></i>8. Sponsor-Applicant Relationship Proof (Official Documents)</h4>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
+                        <h4><i class="fas fa-users icon" aria-hidden="true"></i>8. Sponsor-Applicant Relationship Proof (Official Documents)</h4>
+                        <i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
                     </div>
                     <div class="accordion-content">
                         <div class="accordion-content-inner">
@@ -695,8 +1143,8 @@
                 <!-- Item 9: Bank Statement -->
                 <div class="accordion-item">
                     <div class="accordion-header">
-                        <h4><i class="fas fa-university icon"></i>9. Sponsor's 1-Year Bank Statement (Original/Attested)</h4>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
+                        <h4><i class="fas fa-university icon" aria-hidden="true"></i>9. Sponsor's 1-Year Bank Statement (Original/Attested)</h4>
+                        <i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
                     </div>
                     <div class="accordion-content">
                         <div class="accordion-content-inner">
@@ -707,8 +1155,8 @@
                 <!-- Item 10: Bulk Transfer -->
                 <div class="accordion-item">
                     <div class="accordion-header">
-                        <h4><i class="fas fa-exchange-alt icon"></i>10. Explanation Letter for Large/Recent Deposits (If Applicable)</h4>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
+                        <h4><i class="fas fa-exchange-alt icon" aria-hidden="true"></i>10. Explanation Letter for Large/Recent Deposits (If Applicable)</h4>
+                        <i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
                     </div>
                     <div class="accordion-content">
                         <div class="accordion-content-inner">
@@ -719,8 +1167,8 @@
                 <!-- Item 11: Bank Balance Certificate -->
                 <div class="accordion-item">
                     <div class="accordion-header">
-                        <h4><i class="fas fa-certificate icon"></i>11. Sponsor's Bank Balance Certificate (Original, Recent)</h4>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
+                        <h4><i class="fas fa-certificate icon" aria-hidden="true"></i>11. Sponsor's Bank Balance Certificate (Original, Recent)</h4>
+                        <i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
                     </div>
                     <div class="accordion-content">
                         <div class="accordion-content-inner">
@@ -731,8 +1179,8 @@
                 <!-- Item 12: Sponsor's ITR -->
                 <div class="accordion-item">
                     <div class="accordion-header">
-                        <h4><i class="fas fa-file-invoice icon"></i>12. Sponsor's Income Tax Returns (Last 3 Years) & PAN Card</h4>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
+                        <h4><i class="fas fa-file-invoice icon" aria-hidden="true"></i>12. Sponsor's Income Tax Returns (Last 3 Years) & PAN Card</h4>
+                        <i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
                     </div>
                     <div class="accordion-content">
                         <div class="accordion-content-inner">
@@ -743,8 +1191,8 @@
                 <!-- Item 13: Candidate Name Diff -->
                 <div class="accordion-item">
                     <div class="accordion-header">
-                        <h4><i class="fas fa-user-edit icon"></i>13. Applicant's Name Discrepancy Affidavit (If Applicable)</h4>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
+                        <h4><i class="fas fa-user-edit icon" aria-hidden="true"></i>13. Applicant's Name Discrepancy Affidavit (If Applicable)</h4>
+                        <i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
                     </div>
                     <div class="accordion-content">
                         <div class="accordion-content-inner">
@@ -755,8 +1203,8 @@
                 <!-- Item 14: Sponsor Name Diff -->
                 <div class="accordion-item">
                     <div class="accordion-header">
-                        <h4><i class="fas fa-user-shield icon"></i>14. Sponsor's Name Discrepancy Affidavit (If Applicable)</h4>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
+                        <h4><i class="fas fa-user-shield icon" aria-hidden="true"></i>14. Sponsor's Name Discrepancy Affidavit (If Applicable)</h4>
+                        <i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
                     </div>
                     <div class="accordion-content">
                         <div class="accordion-content-inner">
@@ -767,8 +1215,8 @@
                 <!-- Item 15: Work Experience -->
                 <div class="accordion-item">
                     <div class="accordion-header">
-                        <h4><i class="fas fa-user-tie icon"></i>15. Applicant's Work Experience Proof (If Any Gap or Relevant)</h4>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
+                        <h4><i class="fas fa-user-tie icon" aria-hidden="true"></i>15. Applicant's Work Experience Proof (If Any Gap or Relevant)</h4>
+                        <i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
                     </div>
                     <div class="accordion-content">
                         <div class="accordion-content-inner">
@@ -779,8 +1227,8 @@
                 <!-- Item 16: Photo -->
                 <div class="accordion-item">
                     <div class="accordion-header">
-                        <h4><i class="fas fa-id-card-alt icon"></i>16. Applicant's Passport-Size Photographs (Specifics by <strong class="itokyo-academy">itokyo academy</strong>)</h4>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
+                        <h4><i class="fas fa-id-card-alt icon" aria-hidden="true"></i>16. Applicant's Passport-Size Photographs (Specifics by <strong class="itokyo-academy">itokyo academy</strong>)</h4>
+                        <i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
                     </div>
                     <div class="accordion-content">
                         <div class="accordion-content-inner">
@@ -796,35 +1244,35 @@
             </div>
 
             <div class="checklist-note">
-                <p><i class="fas fa-bullhorn"></i> <span style="font-weight:800; letter-spacing: 0.5px;">ATTENTION TO DETAIL IS PARAMOUNT!</span> This checklist is your bible. Your <strong class="itokyo-academy">itokyo academy</strong> consultant is your ultimate resource for any query. Ensure every document is pristine before final submission through <strong class="itokyo-academy">itokyo academy</strong>.</p>
+                <p><i class="fas fa-bullhorn" aria-hidden="true"></i> <span style="font-weight:800; letter-spacing: 0.5px;">ATTENTION TO DETAIL IS PARAMOUNT!</span> This checklist is your bible. Your <strong class="itokyo-academy">itokyo academy</strong> consultant is your ultimate resource for any query. Ensure every document is pristine before final submission through <strong class="itokyo-academy">itokyo academy</strong>.</p>
             </div>
         </section>
 
         <section id="faq">
-            <h2><i class="fas fa-comments-dollar section-title-icon"></i><strong class="itokyo-academy">itokyo academy</strong>'s Expert Answers: Your Top FAQs</h2>
+            <h2><i class="fas fa-comments-dollar section-title-icon" aria-hidden="true"></i><strong class="itokyo-academy">itokyo academy</strong>'s Expert Answers: Your Top FAQs</h2>
             <p><strong class="itokyo-academy">itokyo academy</strong> anticipates your questions. Here are in-depth answers to common queries, ensuring you have complete clarity and confidence throughout your UNITAS application journey.</p>
             <div class="accordion">
                 <!-- Financial & Sponsor FAQs -->
                 <div class="accordion-item">
-                    <div class="accordion-header"><h4><i class="fas fa-coins icon"></i>Can I show Fixed Deposits (FDs) or Public Provident Fund (PPF) for proof of funds?</h4><i class="fas fa-chevron-down toggle-icon"></i></div>
+                    <div class="accordion-header"><h4><i class="fas fa-coins icon" aria-hidden="true"></i>Can I show Fixed Deposits (FDs) or Public Provident Fund (PPF) for proof of funds?</h4><i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i></div>
                     <div class="accordion-content"><div class="accordion-content-inner">
                         <p>Generally, Japanese immigration prefers liquid funds in savings or current accounts. However, FDs nearing maturity (or that can be liquidated with proof) might be considered. PPF is usually not accepted due to its lock-in period. <strong class="itokyo-academy">itokyo academy</strong> will advise on the best way to present your financial portfolio, always prioritizing what immigration authorities prefer.</p>
                     </div></div>
                 </div>
                 <div class="accordion-item">
-                    <div class="accordion-header"><h4><i class="fas fa-users-cog icon"></i>My sponsor is retired. Is that acceptable?</h4><i class="fas fa-chevron-down toggle-icon"></i></div>
+                    <div class="accordion-header"><h4><i class="fas fa-users-cog icon" aria-hidden="true"></i>My sponsor is retired. Is that acceptable?</h4><i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i></div>
                     <div class="accordion-content"><div class="accordion-content-inner">
                         <p>Yes, a retired sponsor can be acceptable if they have sufficient pension income (provable via pension statements) and substantial savings that meet the >10 Lakhs INR balance requirement. The source of funds must be clearly documented (e.g., retirement benefits, past savings). <strong class="itokyo-academy">itokyo academy</strong> helps structure such cases.</p>
                     </div></div>
                 </div>
                  <div class="accordion-item">
-                    <div class="accordion-header"><h4><i class="fas fa-balance-scale icon"></i>What if my sponsor's ITR income is slightly less than 10 Lakhs but bank balance is very high?</h4><i class="fas fa-chevron-down toggle-icon"></i></div>
+                    <div class="accordion-header"><h4><i class="fas fa-balance-scale icon" aria-hidden="true"></i>What if my sponsor's ITR income is slightly less than 10 Lakhs but bank balance is very high?</h4><i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i></div>
                     <div class="accordion-content"><div class="accordion-content-inner">
                         <p>Both ITR income (>10 Lakhs) and bank balance (>10 Lakhs) are generally key indicators. While a very strong bank balance can be positive, a significantly lower ITR might raise questions about ongoing financial support capacity. <strong class="itokyo-academy">itokyo academy</strong> will assess the overall financial profile and advise if additional co-sponsors or documentation might be needed.</p>
                     </div></div>
                 </div>
                 <div class="accordion-item">
-                    <div class="accordion-header"><h4><i class="fas fa-user-friends icon"></i>Can I have multiple sponsors?</h4><i class="fas fa-chevron-down toggle-icon"></i></div>
+                    <div class="accordion-header"><h4><i class="fas fa-user-friends icon" aria-hidden="true"></i>Can I have multiple sponsors?</h4><i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i></div>
                     <div class="accordion-content"><div class="accordion-content-inner">
                         <p>It's generally preferred to have one strong primary sponsor. Multiple sponsors (e.g., both parents) can be considered if their combined financials clearly meet the criteria and their relationship to you is easily provable. Complex multiple sponsor scenarios can weaken an application. <strong class="itokyo-academy">itokyo academy</strong> advises the simplest, strongest approach.</p>
                     </div></div>
@@ -832,19 +1280,19 @@
 
                 <!-- Documentation & Process FAQs -->
                  <div class="accordion-item">
-                    <div class="accordion-header"><h4><i class="fas fa-calendar-alt icon"></i>How long does the entire application process take with <strong class="itokyo-academy">itokyo academy</strong>?</h4><i class="fas fa-chevron-down toggle-icon"></i></div>
+                    <div class="accordion-header"><h4><i class="fas fa-calendar-alt icon" aria-hidden="true"></i>How long does the entire application process take with <strong class="itokyo-academy">itokyo academy</strong>?</h4><i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i></div>
                     <div class="accordion-content"><div class="accordion-content-inner">
                         <p>From initial consultation with <strong class="itokyo-academy">itokyo academy</strong> to visa approval, the process typically takes 4-6 months, depending on the intake, document readiness, and immigration processing times. <strong class="itokyo-academy">itokyo academy</strong> creates a personalized timeline for you.</p>
                     </div></div>
                 </div>
                 <div class="accordion-item">
-                    <div class="accordion-header"><h4><i class="fas fa-file-medical icon"></i>Do I need a medical certificate for the application?</h4><i class="fas fa-chevron-down toggle-icon"></i></div>
+                    <div class="accordion-header"><h4><i class="fas fa-file-medical icon" aria-hidden="true"></i>Do I need a medical certificate for the application?</h4><i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i></div>
                     <div class="accordion-content"><div class="accordion-content-inner">
                         <p>A medical certificate is not usually required for the initial application to UNITAS or for the Certificate of Eligibility (CoE). However, some embassies might request a basic health check-up or specific tests (like TB) at the visa stamping stage. <strong class="itokyo-academy">itokyo academy</strong> will inform you if this becomes necessary for your specific consulate.</p>
                     </div></div>
                 </div>
                 <div class="accordion-item">
-                    <div class="accordion-header"><h4><i class="fas fa-stamp icon"></i>What is a Certificate of Eligibility (CoE) and why is it important?</h4><i class="fas fa-chevron-down toggle-icon"></i></div>
+                    <div class="accordion-header"><h4><i class="fas fa-stamp icon" aria-hidden="true"></i>What is a Certificate of Eligibility (CoE) and why is it important?</h4><i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i></div>
                     <div class="accordion-content"><div class="accordion-content-inner">
                         <p>The CoE is a document issued by the Japanese immigration authorities that certifies you have met the conditions for landing in Japan. UNITAS applies for this on your behalf after they accept your application (a process managed by <strong class="itokyo-academy">itokyo academy</strong>). You need the original CoE to apply for your student visa at the Japanese Embassy/Consulate in your country. It's the most crucial step before the visa itself.</p>
                     </div></div>
@@ -852,19 +1300,19 @@
 
                 <!-- Study & Life in Japan FAQs -->
                 <div class="accordion-item">
-                    <div class="accordion-header"><h4><i class="fas fa-plane-arrival icon"></i>Does <strong class="itokyo-academy">itokyo academy</strong> or UNITAS help with accommodation?</h4><i class="fas fa-chevron-down toggle-icon"></i></div>
+                    <div class="accordion-header"><h4><i class="fas fa-plane-arrival icon" aria-hidden="true"></i>Does <strong class="itokyo-academy">itokyo academy</strong> or UNITAS help with accommodation?</h4><i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i></div>
                     <div class="accordion-content"><div class="accordion-content-inner">
                         <p>Yes, UNITAS offers various accommodation options like dormitories or can assist with finding private apartments. <strong class="itokyo-academy">itokyo academy</strong> will provide you with these options and guide you through the selection and booking process once your admission is confirmed.</p>
                     </div></div>
                 </div>
                 <div class="accordion-item">
-                    <div class="accordion-header"><h4><i class="fas fa-user-clock icon"></i>Can I work part-time while studying at UNITAS? How many hours?</h4><i class="fas fa-chevron-down toggle-icon"></i></div>
+                    <div class="accordion-header"><h4><i class="fas fa-user-clock icon" aria-hidden="true"></i>Can I work part-time while studying at UNITAS? How many hours?</h4><i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i></div>
                     <div class="accordion-content"><div class="accordion-content-inner">
                         <p>Yes, as a student visa holder, you can apply for a work permit that allows you to work up to 28 hours per week during school terms and up to 40 hours per week (8 hours a day) during long vacation periods. <strong class="itokyo-academy">itokyo academy</strong> and UNITAS provide guidance on finding part-time jobs.</p>
                     </div></div>
                 </div>
                  <div class="accordion-item">
-                    <div class="accordion-header"><h4><i class="fas fa-book-reader icon"></i>What level of Japanese should I ideally have before joining UNITAS?</h4><i class="fas fa-chevron-down toggle-icon"></i></div>
+                    <div class="accordion-header"><h4><i class="fas fa-book-reader icon" aria-hidden="true"></i>What level of Japanese should I ideally have before joining UNITAS?</h4><i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i></div>
                     <div class="accordion-content"><div class="accordion-content-inner">
                         <p>While UNITAS has courses for absolute beginners, <strong class="itokyo-academy">itokyo academy</strong> strongly recommends completing at least JLPT N5 level (or equivalent 150-200 study hours) before departure. This not only strengthens your visa application but also helps you adapt more quickly to life and studies in Japan.</p>
                     </div></div>
@@ -872,7 +1320,7 @@
 
                  <!-- itokyo academy Specific FAQs -->
                  <div class="accordion-item">
-                    <div class="accordion-header"><h4><i class="fas fa-hands-helping icon"></i>What specific support does <strong class="itokyo-academy">itokyo academy</strong> provide beyond documentation?</h4><i class="fas fa-chevron-down toggle-icon"></i></div>
+                    <div class="accordion-header"><h4><i class="fas fa-hands-helping icon" aria-hidden="true"></i>What specific support does <strong class="itokyo-academy">itokyo academy</strong> provide beyond documentation?</h4><i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i></div>
                     <div class="accordion-content"><div class="accordion-content-inner">
                         <p><strong class="itokyo-academy">itokyo academy</strong> offers end-to-end support:
                             <ul>
@@ -890,15 +1338,15 @@
                     </div></div>
                 </div>
                  <div class="accordion-item">
-                    <div class="accordion-header"><h4><i class="fas fa-check-double icon"></i>Why should I choose <strong class="itokyo-academy">itokyo academy</strong> for my UNITAS application?</h4><i class="fas fa-chevron-down toggle-icon"></i></div>
+                    <div class="accordion-header"><h4><i class="fas fa-check-double icon" aria-hidden="true"></i>Why should I choose <strong class="itokyo-academy">itokyo academy</strong> for my UNITAS application?</h4><i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i></div>
                     <div class="accordion-content"><div class="accordion-content-inner">
                         <p><strong class="itokyo-academy">itokyo academy</strong> brings unparalleled expertise, a high success rate, and a deep understanding of Japanese immigration and UNITAS's requirements. We provide personalized, ethical, and transparent services. Our comprehensive approach, from initial assessment to post-arrival support, makes us a trusted partner, not just an agent. This very guide is a testament to our commitment to providing game-changing resources for our students.</p>
                     </div></div>
                 </div>
-                <div class="accordion-item"> <!-- Added new FAQ -->
+                <div class="accordion-item">
                     <div class="accordion-header">
-                        <h4><i class="fas fa-user-graduate icon"></i>What are my options after completing the course at UNITAS? Can <strong class="itokyo-academy">itokyo academy</strong> help?</h4>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
+                        <h4><i class="fas fa-user-graduate icon" aria-hidden="true"></i>What are my options after completing the course at UNITAS? Can <strong class="itokyo-academy">itokyo academy</strong> help?</h4>
+                        <i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
                     </div>
                     <div class="accordion-content">
                         <div class="accordion-content-inner">
@@ -906,10 +1354,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="accordion-item"> <!-- Added new FAQ -->
+                <div class="accordion-item">
                     <div class="accordion-header">
-                        <h4><i class="fas fa-money-check-alt icon"></i>When do I need to pay the tuition fees to UNITAS?</h4>
-                        <i class="fas fa-chevron-down toggle-icon"></i>
+                        <h4><i class="fas fa-money-check-alt icon" aria-hidden="true"></i>When do I need to pay the tuition fees to UNITAS?</h4>
+                        <i class="fas fa-chevron-down toggle-icon" aria-hidden="true"></i>
                     </div>
                     <div class="accordion-content">
                         <div class="accordion-content-inner">
@@ -923,6 +1371,10 @@
 
     </div>
 
+    <a href="#" id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </a>
+
     <footer>
         <p class="footer-brand">This Definitive Application Masterclass is © 2024-2025 <span class="academy">itokyo academy</span>. All Rights Reserved.</p>
         <p>Meticulously Engineered & Proudly Delivered by <a href="https://itokyoacademy.com" target="_blank" rel="noopener noreferrer">itokyoacademy.com</a> – Your Premier Partner for UNITAS Japan.</p>
@@ -930,47 +1382,245 @@
     </footer>
 
     <script>
+        // Accordion functionality
         const accordionItems = document.querySelectorAll('.accordion-item');
+        let uniqueIdCounter = 0; // To generate unique IDs
+
+        // Initialize accordions with accessibility attributes
         accordionItems.forEach(item => {
             const header = item.querySelector('.accordion-header');
             const content = item.querySelector('.accordion-content');
+            const contentInner = content.querySelector('.accordion-content-inner');
+
+            const contentId = `accordion-content-${uniqueIdCounter}`;
+            content.setAttribute('id', contentId);
+            header.setAttribute('aria-controls', contentId);
+            header.setAttribute('aria-expanded', 'false');
+
+            if (header.tagName.toLowerCase() !== 'button') {
+                header.setAttribute('role', 'button');
+                header.setAttribute('tabindex', '0');
+            }
+            uniqueIdCounter++;
+
             header.addEventListener('click', () => {
-                const parentAccordion = item.closest('.accordion');
-                if (parentAccordion) {
-                    parentAccordion.querySelectorAll('.accordion-item').forEach(otherItem => {
-                        if (otherItem !== item && otherItem.classList.contains('active')) {
-                            otherItem.classList.remove('active');
-                            otherItem.querySelector('.accordion-content').style.maxHeight = null;
-                        }
-                    });
-                }
-                item.classList.toggle('active');
-                if (item.classList.contains('active')) {
-                    content.style.maxHeight = content.scrollHeight + "px";
-                } else {
-                    content.style.maxHeight = null;
+                toggleAccordionItem(item, header, content, contentInner);
+            });
+
+            header.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    toggleAccordionItem(item, header, content, contentInner);
                 }
             });
         });
 
+        function toggleAccordionItem(currentItem, currentHeader, currentContent, currentContentInner) {
+            const isActive = currentItem.classList.contains('active'); // Check state *before* toggle
+            const parentAccordion = currentItem.closest('.accordion');
+
+            if (parentAccordion) {
+                parentAccordion.querySelectorAll('.accordion-item').forEach(otherItem => {
+                    if (otherItem !== currentItem && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('.accordion-content').style.maxHeight = null;
+                        otherItem.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+
+            currentItem.classList.toggle('active'); // Toggle after checking others
+            if (currentItem.classList.contains('active')) {
+                currentContent.style.maxHeight = currentContentInner.scrollHeight + "px";
+                currentHeader.setAttribute('aria-expanded', 'true');
+            } else {
+                currentContent.style.maxHeight = null;
+                currentHeader.setAttribute('aria-expanded', 'false');
+            }
+        }
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+
+        if (mobileMenuBtn && navMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                navMenu.classList.toggle('mobile-visible');
+                const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+                mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
+                mobileMenuBtn.innerHTML = isExpanded ? 
+                    '<i class="fas fa-bars" aria-hidden="true"></i>' : 
+                    '<i class="fas fa-times" aria-hidden="true"></i>';
+            });
+        }
+
+        // Navigation highlighting
         const sections = document.querySelectorAll('section[id]');
         const navLinks = document.querySelectorAll('#main-nav ul li a');
+        const navElement = document.getElementById('main-nav');
+        let navHeight = navElement ? navElement.offsetHeight : 70; // Default nav height
+
+        function updateNavHeight() {
+            if (navElement) {
+                navHeight = navElement.offsetHeight;
+            }
+        }
+        
+        // Update navHeight initially and on resize
+        window.addEventListener('load', updateNavHeight);
+        window.addEventListener('resize', updateNavHeight);
+
+        // Scroll event to highlight current section in nav
         window.addEventListener('scroll', () => {
-            let current = 'welcome'; // Default to welcome
+            let currentSectionId = '';
+            let scrollPosition = window.scrollY;
+            
+            // Navbar changes on scroll
+            if (scrollPosition > 50) {
+                navElement.classList.add('scrolled');
+            } else {
+                navElement.classList.remove('scrolled');
+            }
+            
+            // Back to top button visibility
+            const backToTopBtn = document.getElementById('back-to-top');
+            if (backToTopBtn) {
+                if (scrollPosition > 500) {
+                    backToTopBtn.classList.add('visible');
+                } else {
+                    backToTopBtn.classList.remove('visible');
+                }
+            }
+            
+            // Determine current section based on scroll position
+            // A section is "current" if its top is within a certain range from the top of the viewport, accounting for nav height
+            let minDistance = Infinity;
+
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
-                if (pageYOffset >= (sectionTop - (window.innerHeight / 2.5))) { // Adjusted threshold
-                    current = section.getAttribute('id');
+                const distanceToTop = Math.abs(pageYOffset - (sectionTop - navHeight - (window.innerHeight * 0.1))); // Adjust offset as needed
+
+                if (pageYOffset >= (sectionTop - navHeight - (window.innerHeight * 0.2))) { // A common way to detect current section
+                     currentSectionId = section.getAttribute('id');
+                }
+
+                // Fallback for very top of the page or if no section is "active" yet
+                if (currentSectionId === '' && pageYOffset < (sections[0].offsetTop - navHeight)) {
+                    currentSectionId = sections[0].getAttribute('id');
                 }
             });
+             // If scrolled to the very top, make the first link active
+            if (pageYOffset < (sections[0].offsetTop - navHeight - (window.innerHeight * 0.3))) { // Give some buffer
+                currentSectionId = navLinks[0].getAttribute('href').substring(1);
+            }
+
 
             navLinks.forEach(link => {
                 link.classList.remove('active');
-                if (link.getAttribute('href').substring(1) === current) {
+                const href = link.getAttribute('href');
+                if (href && href.substring(1) === currentSectionId) {
                     link.classList.add('active');
                 }
             });
+            
+            // Section animation on scroll into view
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                if (sectionTop < window.innerHeight * 0.8) {
+                    section.classList.add('visible');
+                }
+            });
         });
+
+        // Set initial active link on page load
+        window.addEventListener('load', () => {
+            updateNavHeight(); // Ensure navHeight is correct
+            // Trigger scroll event to set initial active state
+            window.dispatchEvent(new Event('scroll'));
+
+            // If there's a hash in the URL, ensure that section's link is active
+            if (window.location.hash) {
+                const hashId = window.location.hash.substring(1);
+                navLinks.forEach(link => {
+                    link.classList.remove('active'); // Clear previous active
+                    if (link.getAttribute('href').substring(1) === hashId) {
+                        link.classList.add('active');
+                    }
+                });
+                
+                // Smooth scroll to the section with offset for fixed nav
+                const targetSection = document.getElementById(hashId);
+                if (targetSection) {
+                    setTimeout(() => {
+                        window.scrollTo({
+                            top: targetSection.offsetTop - navHeight - 20,
+                            behavior: 'smooth'
+                        });
+                    }, 100);
+                }
+            } else if (sections.length > 0) { // If no hash, and sections exist
+                 // Default to first nav link if page loads at the very top
+                if (pageYOffset < 50 && navLinks.length > 0) { // Small threshold for "top"
+                    navLinks.forEach(l => l.classList.remove('active')); // Clear all
+                    navLinks[0].classList.add('active'); // Activate first
+                } else {
+                     window.dispatchEvent(new Event('scroll')); // Otherwise, let scroll handler decide
+                }
+            }
+            
+            // Initialize section visibility
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                if (sectionTop < window.innerHeight * 0.8) {
+                    section.classList.add('visible');
+                }
+            });
+        });
+        
+        // Back to top button functionality
+        const backToTopBtn = document.getElementById('back-to-top');
+        if (backToTopBtn) {
+            backToTopBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+        
+        // Smooth scroll for navigation links
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Only if it's an anchor link
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    
+                    // Close mobile menu if open
+                    if (navMenu && navMenu.classList.contains('mobile-visible')) {
+                        navMenu.classList.remove('mobile-visible');
+                        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars" aria-hidden="true"></i>';
+                    }
+                    
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - navHeight - 20,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Add page load animation
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('loaded');
+        });
+
     </script>
 
 </body>
